@@ -28,23 +28,21 @@ export default component$(() => {
   const movies = trendingMovies.value.results;
   const shows = trendingShows.value.results;
   return (
-    <>
-      <div class="bg-gray-900 h-screen w-full">
-        <Hero />
+    <div class="pb-10">
+      <Hero />
 
-        <Trending
-          title="Trending Movies"
-          items={movies}
-          getItemTitle={$((movie: ArrayItem<typeof movies>) => movie.title)}
-        />
+      <Trending
+        title="Trending Movies"
+        items={movies}
+        getItemTitle={$((movie: ArrayItem<typeof movies>) => movie.title)}
+      />
 
-        <Trending
-          title="Trending Tv Shows"
-          items={shows}
-          getItemTitle={$((show: ArrayItem<typeof shows>) => show.name)}
-        />
-      </div>
-    </>
+      <Trending
+        title="Trending Tv Shows"
+        items={shows}
+        getItemTitle={$((show: ArrayItem<typeof shows>) => show.name)}
+      />
+    </div>
   );
 });
 

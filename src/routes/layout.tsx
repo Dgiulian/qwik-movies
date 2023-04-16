@@ -1,5 +1,6 @@
 import { component$, Slot } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
+import { Footer } from "~/components/footer";
 
 export const useServerTimeLoader = routeLoader$(() => {
   return {
@@ -9,14 +10,12 @@ export const useServerTimeLoader = routeLoader$(() => {
 
 export default component$(() => {
   return (
-    <div class="page">
+    <div class="bg-gray-900 min-h-screen w-full py-12">
       <main>
         {/* <Header /> */}
         <Slot />
       </main>
-      <div class="section dark">
-        <div class="container">{/* <Footer /> */}</div>
-      </div>
+      <div class="py-6">{<Footer />}</div>
     </div>
   );
 });
