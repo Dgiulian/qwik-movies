@@ -37,5 +37,8 @@
     "undici": "5.21.0",
     "vite": "4.3.0-beta.3",
     "vite-tsconfig-paths": "3.5.0"
+  },
+  "dependencies": {
+    "tmdb-v3": "^2.2.1"
   }
 }
