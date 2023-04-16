@@ -6,21 +6,22 @@ export const Hero = component$(() => {
   const movie = useHeroMovie();
 
   return (
-    <section class="h-[500px] bg-black grid grid-cols-2 relative">
+    <section class="h-[700px] bg-black grid grid-cols-2 relative">
       <div
         class={`absolute 
-      right-0 h-full
-       w-[70%]
-        after:bg-gradient-to-r 
+        right-0 
+        h-full
+        w-[70%]
         after:from-black
+        after:bg-gradient-to-r 
         after:to-transparent 
-         after:h-full
-         after:w-full
-         after:top-0         
-         after:right-0         
-         after:z-2 
-         after:absolute 
-         after:block 
+        after:h-full
+        after:w-full
+        after:top-0         
+        after:right-0         
+        after:z-2 
+        after:absolute 
+        after:block 
          `}
       >
         <img

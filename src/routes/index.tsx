@@ -28,7 +28,7 @@ export default component$(() => {
   const movies = trendingMovies.value.results;
   const shows = trendingShows.value.results;
   return (
-    <div class="pb-10">
+    <div class="pb-10 relative overflow-y-auto ">
       <Hero />
 
       <Trending

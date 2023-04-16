@@ -25,14 +25,10 @@ export class TmdbV3 {
     return DiscoverMoviesSchema.parse(await res.json());
   }
   async discoverShows() {
-    console.log(
-      `${this.BASE_URL}/discover/tv?sort_by=popularity.desc&api_key=${this.API_KEY}`
-    );
     const res = await fetch(
       `${this.BASE_URL}/discover/tv?sort_by=popularity.desc&api_key=${this.API_KEY}`
     );
     const shows = await res.json();
-    console.log(shows);
     return DiscoverShowsSchema.parse(shows);
   }
   async getMovie(movie_id: number) {
