@@ -5,6 +5,7 @@ import { Hero } from "~/components/hero";
 import { Trending } from "~/components/trending";
 import tmdb from "~/services/tmdb";
 import type { ArrayItem } from "~/types";
+import { getRandomMovie } from "~/utils";
 
 export const useTrendingMovies = routeLoader$(async () => {
   const movies = await tmdb.discoverMovies();
@@ -17,11 +18,6 @@ export const useTrendingShows = routeLoader$(async () => {
   return shows;
 });
 
-export const useHeroMovie = routeLoader$(async () => {
-  const movie = await tmdb.getMovie(830896);
-  return movie;
-});
-
 export default component$(() => {
   const trendingMovies = useTrendingMovies();
   const trendingShows = useTrendingShows();
@@ -29,7 +25,7 @@ export default component$(() => {
   const shows = trendingShows.value.results;
   return (
     <div class="pb-10 relative overflow-y-auto ">
-      <Hero />
+      <Hero movieId={getRandomMovie(movies.map((movie) => movie.id))} />
 
       <Trending
         title="Trending Movies"

@@ -1,5 +1,6 @@
 import type { PropFunction } from "@builder.io/qwik";
 import { component$ } from "@builder.io/qwik";
+import { Link } from "@builder.io/qwik-city";
 
 type TrendingProps<Item> = {
   title: string;
@@ -17,7 +18,8 @@ export const Trending = component$(
         <p class="text-2xl text-white pl-12">{title}</p>
         <div class="flex gap-4 py-4 overflow-x-scroll  backdrop:scroll-smooth">
           {items.map((movie) => (
-            <div
+            <Link
+              href={`/movie/${movie.id}`}
               key={movie.id}
               class="flex-grow-1 basis-[250px] flex-shrink-0 rounded-md overflow-hidden"
             >
@@ -35,7 +37,7 @@ export const Trending = component$(
               <p class="text-slate-300 font-light py-1">
                 {getItemTitle(movie)}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
