@@ -15,8 +15,6 @@ export const Hero = component$(({ movieId }: HeroProps) => {
     return m;
   });
 
-  console.log(movieId);
-
   return (
     <Resource
       value={movieResource}
